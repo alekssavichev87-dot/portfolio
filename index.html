@@ -1,0 +1,901 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ретушь для памятников и гравировки — Алексей, профессиональный ретушёр</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Профессиональная ретушь и реставрация фотографий для памятников и гравировальных станков. Подготовка портретов под гравировку: по грудь, по пояс, в рост. Опыт 10 лет, работа с мастерскими и большими объёмами.">
+
+  <!-- Canonical URL (замени на свой домен/страницу) -->
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- Favicon (замени путь/размеры под свои файлы) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph (для красивого превью в мессенджерах) -->
+  <meta property="og:title" content="Алексей — ретушь для гравировальных станков и памятников">
+  <meta property="og:description" content="Цифровая ретушь и реставрация фотографий под гравировку: подготовка портретов для памятников, чёткие и аккуратные изображения.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://example.com/images/work1.jpg">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Алексей",
+    "jobTitle": "Ретушёр фотографий",
+    "description": "Профессиональная ретушь и реставрация фотографий для памятников и гравировальных станков.",
+    "email": "mailto:aleks_321t@mail.ru",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://t.me/89209389220"
+    ],
+    "image": "https://example.com/images/work1.jpg",
+    "knowsAbout": [
+      "ретушь фотографий для памятников",
+      "подготовка фото под гравировку",
+      "реставрация старых фотографий"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ретушь для памятников и гравировки",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Ретушь портрета по грудь",
+          "price": "800",
+          "priceCurrency": "RUB"
+        },
+        {
+          "@type": "Offer",
+          "name": "Портрет по пояс",
+          "price": "1200",
+          "priceCurrency": "RUB"
+        },
+        {
+          "@type": "Offer",
+          "name": "Портрет в полный рост",
+          "price": "1600",
+          "priceCurrency": "RUB"
+        },
+        {
+          "@type": "Offer",
+          "name": "Портрет в полный рост с фоном",
+          "price": "2200",
+          "priceCurrency": "RUB"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #f1f1f1;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+
+      /* Фон */
+      background-color: #050816;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(76, 172, 255, 0.18) 0, transparent 45%),
+        radial-gradient(circle at 90% 10%, rgba(186, 104, 255, 0.18) 0, transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(0, 230, 165, 0.16) 0, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255, 138, 101, 0.16) 0, transparent 46%),
+        linear-gradient(135deg, #050816 0%, #050816 45%, #0b1120 100%);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(5, 8, 22, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+    }
+
+    nav span {
+      color: #4da6ff;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.3s, opacity 0.3s;
+      opacity: 0.85;
+    }
+    nav a:hover { color: #60a5fa; opacity: 1; }
+
+    /* Бургер-меню */
+    .burger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .burger span {
+      display: block;
+      height: 3px;
+      border-radius: 999px;
+      background: #f1f1f1;
+      transition: 0.3s;
+    }
+    .burger.active span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .burger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.active span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      background: linear-gradient(120deg, #e0f2fe, #60a5fa, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      max-width: 740px;
+      font-size: 1.08rem;
+      color: #cbd5f5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.85rem 1.8rem;
+      background: radial-gradient(circle at 0 0, #60a5fa, #2563eb);
+      color: white;
+      border-radius: 999px;
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .btn:hover {
+      background: radial-gradient(circle at 0 0, #7dd3fc, #3b82f6);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.7);
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Карточки/фоны блоков */
+    #about > div,
+    #portfolio .grid,
+    #contacts > p {
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 55%) ,
+                  rgba(15, 23, 42, 0.75);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      text-align: center;
+      color: #60a5fa;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    #about-inner {
+      padding: 1.7rem 1.8rem;
+      color: #e5e7eb;
+    }
+
+    #about-inner p + p {
+      margin-top: 0.8rem;
+    }
+
+    #about-inner ul {
+      margin: 0.6rem 0 0.8rem 1.2rem;
+      padding-left: 0.8rem;
+    }
+    #about-inner li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Прайс — КАРТОЧКИ */
+    #price {
+      padding-top: 3rem;
+    }
+
+    #price .price-intro {
+      max-width: 650px;
+      margin: 0 auto 1.8rem;
+      text-align: center;
+      color: #cbd5f5;
+      font-size: 0.98rem;
+    }
+
+    #price .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    #price .price-item {
+      position: relative;
+      overflow: hidden;
+      padding: 1.5rem 1.4rem 1.4rem;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at top left, rgba(148, 163, 184, 0.16), transparent 52%),
+        rgba(15, 23, 42, 0.86);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    #price .price-item:hover {
+      transform: translateY(-4px);
+      border-color: #60a5fa;
+      box-shadow:
+        0 24px 55px rgba(15, 23, 42, 1),
+        0 0 16px rgba(96, 165, 250, 0.3);
+    }
+
+    #price .badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.9rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: #bbf7d0;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    #price .price-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #e5e7eb;
+    }
+
+    #price .price-desc {
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      margin-bottom: 0.9rem;
+      min-height: 2.4em;
+    }
+
+    #price .price-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    #price .price-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #bbf7d0;
+    }
+
+    #price .price-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: right;
+    }
+
+    #price .general-note {
+      margin-top: 1.8rem;
+      font-size: 0.86rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    #price .general-note strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    #portfolio .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.85);
+      background-color: #020617;
+    }
+    .grid img:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: #60a5fa;
+      box-shadow:
+        0 22px 45px rgba(15, 23, 42, 0.95),
+        0 0 20px rgba(96, 165, 250, 0.5);
+    }
+
+    #contacts p {
+      text-align: center;
+      font-size: 1.05rem;
+      padding: 1.5rem;
+      color: #e5e7eb;
+    }
+    #contacts a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+    #contacts a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #9ca3af;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(10px);
+      margin-top: 2rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 1);
+      background-color: #020617;
+    }
+
+    .modal button {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      background: none;
+      border: none;
+      color: #e5e7eb;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .modal button:hover { color: #60a5fa; }
+
+    /* Кнопка "Наверх" */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: radial-gradient(circle at 0 0, #60a5fa, #2563eb);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+      z-index: 1500;
+      transition: background 0.3s, transform 0.2s, opacity 0.2s;
+      opacity: 0;
+    }
+    #backToTop.visible {
+      display: flex;
+      opacity: 1;
+    }
+    #backToTop:hover {
+      background: radial-gradient(circle at 0 0, #7dd3fc, #3b82f6);
+      transform: translateY(-2px);
+    }
+
+    /* Стрелки переключения в модалке */
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: #e5e7eb;
+      cursor: pointer;
+      user-select: none;
+      padding: 0.3rem 0.8rem;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      transition: 0.25s;
+    }
+    .modal-nav:hover {
+      color: #60a5fa;
+      background: rgba(15, 23, 42, 0.85);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 1);
+    }
+    .modal-nav.prev {
+      left: 30px;
+    }
+    .modal-nav.next {
+      right: 30px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.7rem 1.2rem;
+      }
+      nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(15, 23, 42, 0.98);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+        display: none;
+      }
+      nav ul li {
+        border-top: 1px solid rgba(30, 64, 175, 0.8);
+      }
+      nav ul li a {
+        display: block;
+        padding: 0.9rem 1.2rem;
+      }
+      nav ul.open {
+        display: flex;
+      }
+      .burger {
+        display: flex;
+      }
+      header {
+        padding-top: 6rem;
+      }
+      #backToTop {
+        bottom: 20px;
+        right: 20px;
+      }
+      .modal-nav.prev {
+        left: 10px;
+      }
+      .modal-nav.next {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Основная навигация">
+    <span>alexretouch</span>
+
+    <!-- Бургер -->
+    <div class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="navList">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul id="navList">
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#price">Прайс</a></li>
+      <li><a href="#portfolio">Работы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Профессиональная ретушь фото для памятников и гравировки</h1>
+    <p>
+      Опытный художник и ретушёр с 10‑летним стажем. Готовлю фотографии специально под
+      гравировальные станки и нанесение на памятники: ретушь, реставрация, выведение
+      чётких и благородных портретов.
+    </p>
+    <a href="#portfolio" class="btn">Смотреть работы</a>
+  </header>
+
+  <section id="about">
+    <h2>Обо мне</h2>
+    <div id="about-inner">
+      <p>Меня зовут Алексей. Я художник и ретушёр с 10‑летним опытом, специализируюсь на подготовке фотографий именно для гравировальных станков и нанесения на памятники.</p>
+      <p>Владею всем спектром техник — от удаления мелких дефектов и восстановления выцветших участков до глубокой доработки портретов, сохраняя естественность и благородство изображения. Работаю аккуратно с кожей, одеждой, фоном и общим объёмом.</p>
+
+      <p>
+        Ретушь портрета (фотографии) для гравировки позволяет получить чёткое и качественное изображение на памятнике.
+        Это комплексная подготовка снимка к работе на гравировальном станке и включает в себя:
+      </p>
+      <ul>
+        <li>удаление фона;</li>
+        <li>устранение дефектов и искажений исходного фото;</li>
+        <li>прорисовку деталей изображения и черт лица;</li>
+        <li>настройку полутонов;</li>
+        <li>восстановление объёма и проработку деталей на фотографиях низкого качества.</li>
+      </ul>
+
+      <p>Привык к большим объёмам и долгосрочному сотрудничеству с мастерскими. Всегда на связи и оперативно отвечаю в Telegram и по email. Работаю с любым качеством исходников, в том числе со старыми и повреждёнными фотографиями.</p>
+      <p><strong>Базовая стоимость:</strong> ретушь портрета по грудь — <strong>800 ₽</strong>. Остальные варианты — по прайсу ниже.</p>
+    </div>
+  </section>
+
+  <!-- ПРАЙС — КАРТОЧКИ -->
+  <section id="price">
+    <h2>Прайс</h2>
+
+    <p class="price-intro">
+      Итоговая стоимость не зависит от качества исходника — сложные и старые фото беру в работу на тех же условиях.
+      Ниже — базовые расценки по основным видам портретов под гравировку на памятниках.
+    </p>
+
+    <div class="price-grid">
+      <div class="price-item">
+        <span class="badge">Хит</span>
+        <h3 class="price-title">Ретушь портрета по грудь</h3>
+        <p class="price-desc">
+          Подготовка классического портрета по грудь: выравнивание тонов, подчистка кожи,
+          проработка деталей лица, адаптация под гравировальный станок.
+        </p>
+        <div class="price-line">
+          <div class="price-value">800 ₽</div>
+          <div class="price-note">Срок — 1–3 дня</div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h3 class="price-title">Портрет по пояс</h3>
+        <p class="price-desc">
+          Обработка портрета по пояс с акцентом на лицо и одежду, аккуратная прорисовка складок
+          и общих пропорций, с учётом последующей гравировки.
+        </p>
+        <div class="price-line">
+          <div class="price-value">1200 ₽</div>
+          <div class="price-note">Оптимально для средних форматов памятников</div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h3 class="price-title">Портрет в полный рост</h3>
+        <p class="price-desc">
+          Полнофигурный портрет с проработкой силуэта, одежды и позы, подготовленный
+          с учётом читаемости при гравировке на камне.
+        </p>
+        <div class="price-line">
+          <div class="price-value">1600 ₽</div>
+          <div class="price-note">Для крупных памятников и сложных композиций</div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h3 class="price-title">Портрет в полный рост с фоном</h3>
+        <p class="price-desc">
+          Полный рост + аккуратно подобранный фон, который не спорит с фигурой и хорошо
+          смотрится на камне. Возможна стилизация под уже существующие памятники.
+        </p>
+        <div class="price-line">
+          <div class="price-value">2200 ₽</div>
+          <div class="price-note">Возможно использование вашего референса фона</div>
+        </div>
+      </div>
+
+      <div class="price-item">
+        <h3 class="price-title">Срочный заказ</h3>
+        <p class="price-desc">
+          Приоритетное выполнение работы в сжатые сроки, в том числе вечером и ночью
+          по предварительной договорённости.
+        </p>
+        <div class="price-line">
+          <div class="price-value">+50%</div>
+          <div class="price-note">Надбавка к базовой стоимости</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="general-note">
+      <strong>Для мастерских и постоянных клиентов</strong> возможны индивидуальные условия и оптовые цены.
+      Для точного расчёта пришлите фото и пожелания в Telegram или на email.
+    </p>
+  </section>
+  <!-- КОНЕЦ ПРАЙСА -->
+
+  <section id="portfolio">
+    <h2>Примеры работ</h2>
+    <div class="grid">
+      <!-- Первые 12 -->
+      <img src="images/work1.jpg" alt="Ретушь портрета для гравировки — пример 1" loading="lazy" />
+      <img src="images/work2.jpg" alt="Ретушь фото для памятника — пример 2" loading="lazy" />
+      <img src="images/work3.jpg" alt="Реставрация старой фотографии под гравировку — пример 3" loading="lazy" />
+      <img src="images/work4.jpg" alt="Подготовка портрета по грудь для памятника — пример 4" loading="lazy" />
+      <img src="images/work5.jpg" alt="Ретушь лица и одежды для гравировального станка — пример 5" loading="lazy" />
+      <img src="images/work6.jpg" alt="Реставрация выцветшей фотографии для памятника — пример 6" loading="lazy" />
+      <img src="images/work7.jpg" alt="Портрет по пояс под гравировку — пример 7" loading="lazy" />
+      <img src="images/work8.jpg" alt="Портрет в полный рост на памятник — пример 8" loading="lazy" />
+      <img src="images/work9.jpg" alt="Аккуратная ретушь для гравировки на камне — пример 9" loading="lazy" />
+      <img src="images/work10.jpg" alt="Подготовка портрета по грудь для памятника — пример 10" loading="lazy" />
+      <img src="images/work11.jpg" alt="Реставрация старого портрета для гравировки — пример 11" loading="lazy" />
+      <img src="images/work12.jpg" alt="Ретушь фото под памятник и гравировку — пример 12" loading="lazy" />
+
+      <!-- Новые 15 -->
+      <img src="images/work13.jpg" alt="Ретушь портрета с фоном для памятника — пример 13" loading="lazy" />
+      <img src="images/work14.jpg" alt="Портрет по пояс под гравировальный станок — пример 14" loading="lazy" />
+      <img src="images/work15.jpg" alt="Ретушь и реставрация фото для памятника — пример 15" loading="lazy" />
+      <img src="images/work16.jpg" alt="Полнофигурный портрет под гравировку — пример 16" loading="lazy" />
+      <img src="images/work17.jpg" alt="Подготовка портрета по грудь для камня — пример 17" loading="lazy" />
+      <img src="images/work18.jpg" alt="Ретушь лица и одежды для памятника — пример 18" loading="lazy" />
+      <img src="images/work19.jpg" alt="Реставрация повреждённого фото под гравировку — пример 19" loading="lazy" />
+      <img src="images/work20.jpg" alt="Портрет в полный рост на памятник — пример 20" loading="lazy" />
+      <img src="images/work21.jpg" alt="Ретушь портрета по грудь для гравировки — пример 21" loading="lazy" />
+      <img src="images/work22.jpg" alt="Подготовка фото для гравировального станка — пример 22" loading="lazy" />
+      <img src="images/work23.jpg" alt="Реставрация старой фотографии под памятник — пример 23" loading="lazy" />
+      <img src="images/work24.jpg" alt="Ретушь портрета с аккуратным фоном — пример 24" loading="lazy" />
+      <img src="images/work25.jpg" alt="Портрет по пояс для памятника — пример 25" loading="lazy" />
+      <img src="images/work26.jpg" alt="Ретушь в полный рост для гравировки на камне — пример 26" loading="lazy" />
+      <img src="images/work27.jpg" alt="Реставрация и ретушь фото под памятник — пример 27" loading="lazy" />
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p>
+      Telegram: <a href="https://t.me/89209389220" target="_blank" rel="noopener noreferrer">@89209389220</a><br>
+      Email: <a href="mailto:aleks_321t@mail.ru">aleks_321t@mail.ru</a><br><br>
+      Для оценки пришлите фото (по возможности — оригинал без сжатия) и краткое описание задачи:
+      какой формат памятника, какой портрет нужен (по грудь / по пояс / в рост), есть ли пожелания по фону.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Алексей — Профессиональная ретушь фотографий для памятников и гравировальных станков
+  </footer>
+
+  <!-- Кнопка "Наверх" -->
+  <button id="backToTop" aria-label="Наверх">↑</button>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Просмотр работы">
+    <button id="closeModal" aria-label="Закрыть просмотр">&times;</button>
+
+    <!-- Кнопки перелистывания -->
+    <div class="modal-nav prev" id="prevImg" aria-label="Предыдущее изображение">‹</div>
+    <div class="modal-nav next" id="nextImg" aria-label="Следующее изображение">›</div>
+
+    <img id="modalImg" src="" alt="Увеличенный пример работы ретуши" />
+  </div>
+
+  <script>
+    // Модальное окно для картинок + перелистывание
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+    const prevBtn = document.getElementById("prevImg");
+    const nextBtn = document.getElementById("nextImg");
+
+    const galleryImages = Array.from(document.querySelectorAll(".grid img"));
+    let currentIndex = -1;
+
+    function openModal(index) {
+      currentIndex = index;
+      const img = galleryImages[currentIndex];
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modal.style.display = "flex";
+    }
+
+    function closeModalFn() {
+      modal.style.display = "none";
+      modalImg.src = "";
+      currentIndex = -1;
+    }
+
+    function showNext() {
+      if (galleryImages.length === 0) return;
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      const img = galleryImages[currentIndex];
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+
+    function showPrev() {
+      if (galleryImages.length === 0) return;
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      const img = galleryImages[currentIndex];
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+
+    galleryImages.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        openModal(index);
+      });
+    });
+
+    closeModal.addEventListener("click", closeModalFn);
+
+    modal.addEventListener("click", e => {
+      // Закрытие по клику на фон
+      if (e.target === modal) {
+        closeModalFn();
+      }
+    });
+
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showPrev();
+    });
+
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showNext();
+    });
+
+    // Переключение с клавиатуры
+    document.addEventListener("keydown", (e) => {
+      if (modal.style.display !== "flex") return;
+      if (e.key === "ArrowRight") {
+        showNext();
+      } else if (e.key === "ArrowLeft") {
+        showPrev();
+      } else if (e.key === "Escape") {
+        closeModalFn();
+      }
+    });
+
+    // Бургер-меню
+    const burger = document.getElementById("burger");
+    const navList = document.getElementById("navList");
+
+    burger.addEventListener("click", () => {
+      const isOpen = burger.classList.toggle("active");
+      navList.classList.toggle("open");
+      burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    navList.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        burger.classList.remove("active");
+        navList.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Кнопка "Наверх"
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+  <!-- Метрики (раскомментируй и подставь ID) -->
+
+  <!-- Яндекс.Метрика -->
+  <!--
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){
+      (m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j=0;j<document.scripts.length;j++) {
+        if (document.scripts[j].src === r) { return; }
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(YOUR_COUNTER_ID, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  -->
+
+  <!-- Google Analytics 4 -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXX");
+  </script>
+  -->
+</body>
+</html>
+```
